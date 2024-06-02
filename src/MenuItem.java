@@ -1,7 +1,6 @@
+import java.io.Serializable;
 
-
-// MenuItem class to represent each item on the menu
-class MenuItem {
+public class MenuItem implements Serializable {
     private String name;
     private String description;
     private double price;
@@ -24,4 +23,17 @@ class MenuItem {
     public double getPrice() {
         return price;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
+

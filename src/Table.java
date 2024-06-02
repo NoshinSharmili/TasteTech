@@ -1,21 +1,33 @@
-class Table {
-    private int tableNumber;
-    private boolean occupied;
+import java.io.Serializable;
 
-    public Table(int tableNumber) {
+public class Table implements Serializable {
+    private int tableNumber;
+    private int numberOfSeats;
+    private boolean reserved;
+
+    public Table(int tableNumber, int numberOfSeats) {
         this.tableNumber = tableNumber;
-        this.occupied = false;
+        this.numberOfSeats = numberOfSeats;
+        this.reserved = false;
     }
 
     public int getTableNumber() {
         return tableNumber;
     }
 
-    public boolean isOccupied() {
-        return occupied;
+    public int getNumberOfSeats() {
+        return numberOfSeats;
     }
 
-    public void setOccupied(boolean occupied) {
-        this.occupied = occupied;
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void reserve() {
+        this.reserved = true;
+    }
+
+    public void unreserve() {
+        this.reserved = false;
     }
 }

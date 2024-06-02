@@ -1,8 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-class Menu {
+
+public class Menu implements Serializable {
     private List<MenuItem> items;
 
     public Menu() {
@@ -18,8 +18,20 @@ class Menu {
     }
 
     public void displayMenu() {
-        for (MenuItem item : items) {
-            System.out.println(item.getName() + " - " + item.getDescription() + " - $" + item.getPrice());
+        if (items.isEmpty()) {
+            System.out.println("The menu is empty.");
+        } else {
+            for (MenuItem item : items) {
+                System.out.println(item.getName() + " - " + item.getDescription() + " - $" + item.getPrice());
+            }
         }
+    }
+
+    public void setItems(List<MenuItem> items) {
+        this.items = items;
+    }
+
+    public List<MenuItem> getItems() {
+        return items;
     }
 }
